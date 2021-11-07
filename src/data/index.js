@@ -11,6 +11,19 @@ const newSpicyFoods = [
   { name: "5 Alarm Chili", cuisine: "American", heatLevel: 5 },
 ];
 
+const foodList = foods.map((food) => (
+  <li key={food.id}>
+    {food.name} | Heat: {food.heatLevel} | Cuisine: {food.cuisine}
+  </li>
+));
+
+return (
+  <div>
+    <button onClick={handleAddFood}>Add New Food</button>
+    <ul>{foodList}</ul>
+  </div>
+);
+
 // Get one random spicy food from the array
 function randomSpicyFood() {
   const index = Math.floor(Math.random() * newSpicyFoods.length);
